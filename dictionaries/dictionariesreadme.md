@@ -1,1 +1,1 @@
-this is where the various created and used in this projects will be found 
+this is where the various dictionaries created and used in this project will be found 
