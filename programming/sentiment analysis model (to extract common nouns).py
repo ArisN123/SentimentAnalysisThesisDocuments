@@ -29,7 +29,7 @@ negations = [
 # Initialize spell checker
 spell = SpellChecker()
 
-# Now let's create a more complex sentiment analysis function
+# Begin sentiment analysis process
 def sentiment_analysis(text):
     # Initialize scores for each emotion to 0
     emotions = {emotion: 0 for emotion in emolex_dict.keys()}
@@ -60,8 +60,9 @@ def sentiment_analysis(text):
 
     return positive
 
-# Load your review data
-reviews_df = pd.read_csv('reviews.csv')
+# Load the Amazon review data
+# Load the twitter data csv if you are trying to analyse those
+reviews_df = pd.read_csv('AmazonReview.csv')
 
 # Initialize a defaultdict to count nouns
 noun_counter = defaultdict(lambda: defaultdict(int))
