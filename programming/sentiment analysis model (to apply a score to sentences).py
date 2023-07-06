@@ -3,7 +3,7 @@ from nltk.tokenize import word_tokenize
 from spellchecker import SpellChecker
 
 # Load the NRC EmoLex Lexicon
-emolex_df = pd.read_csv('NRC-Emotion-Lexicon-Wordlevel-v0.92.csv')
+emolex_df = pd.read_csv('NRC-UPDATED.csv')
 
 # Convert the lexicon to a dictionary for efficiency
 emolex_dict = emolex_df.pivot(index='word', 
@@ -60,6 +60,7 @@ def sentiment_analysis(text):
     return sentiment_score
 
 # Load Twitter data for analysis
+# Switch csv file with AmazonReviews.csv when analysing the Amazon data
 df = pd.read_csv('McDoTwitterdata.csv')
 
 # Apply sentiment analysis to each row and store the results in a new column
