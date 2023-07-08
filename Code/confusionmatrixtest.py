@@ -5,17 +5,8 @@ from sklearn.metrics import confusion_matrix
 
 emolex_df = pd.read_csv('NRC-UPDATED.csv')
 
-intensifiers = [
-    'very', 'extremely', 'absolutely', 'totally', 'incredibly', 'rather', 'quite', 'highly', 
-    'exceptionally', 'especially', 'particularly', 'super', 'seriously', 'remarkably', 
-    'majorly', 'most', 'more', 'so', 'really'
-]
-
-negations = [
-    'not', 'never', 'no', 'none', 'nobody', 'nothing', 'neither', 'nowhere', 'never',
-    'hardly', 'scarcely', 'barely', 'doesn’t', 'isn’t', 'wasn’t', 'shouldn’t', 'wouldn’t', 
-    'couldn’t', 'won’t', 'can’t', 'don’t'
-]
+intensifiers = pd.read_csv('intensifiers.csv', header=None)[0].tolist()
+mitigators = pd.read_csv('mitigators.csv', header=None)[0].tolist()
 
 spell = SpellChecker()
 def sentiment_analysis(text):
