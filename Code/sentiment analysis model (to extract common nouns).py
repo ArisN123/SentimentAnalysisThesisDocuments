@@ -11,17 +11,8 @@ emolex_dict = emolex_df.pivot(index='word',
                               columns='emotion', 
                               values='association').to_dict()
 
-intensifiers = [
-    'very', 'extremely', 'absolutely', 'totally', 'incredibly', 'rather', 'quite', 'highly', 
-    'exceptionally', 'especially', 'particularly', 'super', 'seriously', 'remarkably', 
-    'majorly', 'most', 'more', 'so', 'really'
-]
-
-negations = [
-    'not', 'never', 'no', 'none', 'nobody', 'nothing', 'neither', 'nowhere', 'never',
-    'hardly', 'scarcely', 'barely', 'doesn’t', 'isn’t', 'wasn’t', 'shouldn’t', 'wouldn’t', 
-    'couldn’t', 'won’t', 'can’t', 'don’t'
-]
+intensifiers = pd.read_csv('intensifiers.csv', header=None)[0].tolist()
+mitigators = pd.read_csv('mitigators.csv', header=None)[0].tolist()
 
 spell = SpellChecker()
 
