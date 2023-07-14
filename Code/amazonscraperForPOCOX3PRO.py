@@ -7,6 +7,7 @@ headers = {
 }
 
 url = 'https://www.amazon.nl/Xiaomi-Poco-X3-Pro-Smartphone/product-reviews/B08YJFSHFM'
+##update URL based on amazon product you are looking to scrape
 
 response = requests.get(url, headers=headers)
 soup = BeautifulSoup(response.content, 'html.parser')
